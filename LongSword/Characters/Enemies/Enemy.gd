@@ -10,7 +10,7 @@ func chase() -> void:
 	if path:
 		var vector_to_next_point: Vector2 = path[0] - global_position
 		var distance_to_next_point: float = vector_to_next_point.length()
-		if distance_to_next_point < 3:
+		if distance_to_next_point < 3: # 3보다 작으면 에러
 			path.remove(0)
 			if not path:
 				return
