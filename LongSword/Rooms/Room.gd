@@ -21,14 +21,14 @@ var DOWN : int = 16
 func _ready() -> void:
 	num_enemies = enemy_positions_container.get_child_count()
 
-func _on_enemy_killed() -> void:
+func _on_enemy_killed() -> void: #적을 죽이고 적 숫자 업데이트 처
 	num_enemies -= 1
 	if num_enemies == 0:
 		_open_doors()
 
 func _open_doors() -> void:
 	_back_close_entrance()
-	for door in door_container.get_children():
+	for door in door_container.get_children(): 
 		door.open()
 
 func _close_entrance() -> void:
